@@ -1,10 +1,9 @@
 services:
   dhcpd:
-    build: .
     container_name: dhcp_server
-    network_mode: "host"
+    build: ./
     image: dhcp_server
-#    image: networkboot/dhcpd
+    network_mode: "host"
     volumes:
       - ./dhcpd:/etc/dhcp
     restart: always
