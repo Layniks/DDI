@@ -1,9 +1,18 @@
 services:
   dhcpd:
-    container_name: ddi
-    build: ./
-    image: ddi
+    container_name: dhcp_server
+    build: ./dhcp_server
+    image: dhcp_server
     network_mode: "host"
     volumes:
-      - ./dhcpd:/etc/dhcp
+      - ./dhcp_server/dhcpd:/etc/dhcp
+    restart: always
+
+  dns:
+    container_name: dns_server
+    build: ./dns_server
+    image: dns_server
+    network_mode: "host"
+    volumes:
+      - ./dns_server/bind:/etc/bind
     restart: always
