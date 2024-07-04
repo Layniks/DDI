@@ -1,9 +1,9 @@
 FROM ubuntu:22.04
 
-RUN apt-get update && apt-get install -y isc-dhcp-server
+RUN apt-get update && apt-get install -y isc-dhcp-server bind9 bind9utils bind9-doc
 
 RUN mkdir -p /opt
-COPY ./dhcpd/entrypoint.sh /opt/entrypoint.sh
+COPY ./entrypoint.sh /opt/entrypoint.sh
 RUN chmod +x /opt/entrypoint.sh
 
 ENTRYPOINT ["/opt/entrypoint.sh"]

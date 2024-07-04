@@ -1,8 +1,8 @@
 services:
   dhcpd:
-    container_name: dhcp_server
+    container_name: ddi
     build: ./
-    image: dhcp_server
+    image: ddi
     network_mode: "host"
     volumes:
       - ./dhcpd:/etc/dhcp
