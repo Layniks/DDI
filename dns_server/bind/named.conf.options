@@ -1,7 +1,7 @@
 
-// allow only LAN traffic from 192.168.2.0-192.168.2.255
+// allow only LAN traffic from 192.168.1.0-192.168.1.255
 acl LAN {
-    192.168.2.0/24;
+    192.168.1.0/24;
 };
 
 options {

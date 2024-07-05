@@ -6,12 +6,12 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-zone "test.test" IN { \\ define the forward zone
+zone "test.test" IN { // define the forward zone
         type master;
         file "/etc/bind/zones/test.test";
 };
 
-zone "1.168.192.in-addr.arpa" IN { \\ define the reverse zone
+zone "1.168.192.in-addr.arpa" IN { // define the reverse zone
         type master;
         file "/etc/bind/zones/test.test.rev";
 };
